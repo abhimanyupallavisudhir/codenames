@@ -7,14 +7,14 @@ Think of a clue for the red player.
 Done?
 
 <details>
-  <summary>Here are the clues suggested by this script:</summary>
+<summary>Here are the clues suggested by this script:</summary>
     
-    ```
-    Found ball containing points: ['horn', 'ivory', 'soup', 'fish']
-    Nearby words: ['ivory', 'fish', 'loup_de_mer', 'scallops', 'shrimp']
-    ```
+```
+Found ball containing points: ['horn', 'ivory', 'soup', 'fish']
+Nearby words: ['ivory', 'fish', '**loup_de_mer**', '**scallops**', '**shrimp**', '**mudfish**', '**crayfish**', '**stockfish**', '**abalone**', '**prawns**', '**Alaskan_pollock**', '**mussels**', '**lobster**']
+```
 
-    The first two are useless (I keep them because eh), but the other three are reasonable clues.
+The first two are useless (I keep them because eh), but the others are all reasonable clues.
 </details>
 
 The idea is that (sticking to greediness/discounting any complex strategic behaviour and assuming the players have similar minds) codenames can be approximately formulated as an "inverese k-nearest neighbours problem":

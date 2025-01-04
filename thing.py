@@ -95,20 +95,27 @@ def main(A: List[str], B: List[str], k: int = 5) -> Tuple[List[str], List[str]]:
     
     center, radius, contained_points = result
     
+    # make sure it always finds at least k words *not in A*
+    k_ = k + len(A)
+
     # Get nearby words
-    nearby_words = [word for word, _ in sample_nearby(center, k, embedder)]
+    # Get nearby words and format them (bold if not in A)
+    nearby_words = []
+    for word, _ in sample_nearby(center, k_, embedder):
+        if word not in A: # bold legal clues
+            nearby_words.append(f"**{word}**")
+        else:
+            nearby_words.append(word)
     
     return nearby_words, contained_points
 
 if __name__ == "__main__":
+    # Example usage
     A = ["horn", "ivory", "soup", "cast", "telescope", "rainbow", "fish", "princess"]
     B = ["foam", "shampoo", "plane", "polish", "oven", "notre_dame", "forest", "microscope", "chocolate"]
     
     nearby_words, contained_points = main(A, B)
     print(f"Found ball containing points: {contained_points}")
     print(f"Nearby words: {nearby_words}")
-
-
-
     # A = ["horn", "ivory", "soup", "cast", "telescope", "rainbow", "fish", "princess"]
     # B = ["foam", "shampoo", "plane", "polish", "oven", "notre_dame", "forest", "microscope", "chocolate"]
