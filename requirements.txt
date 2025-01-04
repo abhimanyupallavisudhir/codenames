@@ -1,0 +1,5 @@
+numpy
+scikit-learn==1.6.0
+typing-extensions==4.12.2
+gensim==4.3.3
+scipy
